@@ -42,6 +42,7 @@ const RepoList = (props) => {
               <span>{rep.stargazers_count}</span>
             </div>
           </div>
+
           <div className="item-box flex items-center justify-center">
             <div className="item-box-content flex">
               <span className="flex items-center justify-center mr-3">
@@ -65,6 +66,7 @@ const RepoList = (props) => {
               <span>{rep.forks_count}</span>
             </div>
           </div>
+
           <div className="item-box text-center ">
             <Link to={`/${props.userName}/${rep.name}`}>View readme</Link>
           </div>
