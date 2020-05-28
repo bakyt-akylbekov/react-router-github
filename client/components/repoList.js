@@ -1,24 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './repoList.scss'
 
 const RepoList = (props) => {
   const filteredRepo = props.repositories.filter((el) => el.name.includes(props.find))
   return (
     <div>
       <div className="flex bg-indigo-200 border-b-2 border-indigo-500 text-center font-light py-2">
-        <div className="w-1/4 ">Name</div>
-        <div className="w-1/4 ">Star</div>
-        <div className="w-1/4 ">Fork</div>
-        <div className="w-1/4">Readme</div>
+        <div className="item-box">Name</div>
+        <div className="item-box">Star</div>
+        <div className="item-box">Fork</div>
+        <div className="item-box">Readme</div>
       </div>
       {filteredRepo.map((rep) => (
         <div
           key={rep.id}
           className="flex border-b border-indigo-300 bg-indigo-100 py-2 font-medium"
         >
-          <div className="w-1/4 text-center">{rep.name}</div>
-          <div className="w-1/4 flex items-center justify-center">
-            <div className="w-16 flex">
+          <div className="item-box text-center">{rep.name}</div>
+          <div className="item-box flex items-center justify-center">
+            <div className="item-box-content flex">
               <span className="flex items-center justify-center mr-3">
                 <svg
                   height="16"
@@ -41,8 +42,8 @@ const RepoList = (props) => {
               <span>{rep.stargazers_count}</span>
             </div>
           </div>
-          <div className="w-1/4 flex items-center justify-center">
-            <div className="w-16 flex">
+          <div className="item-box flex items-center justify-center">
+            <div className="item-box-content flex">
               <span className="flex items-center justify-center mr-3">
                 <svg
                   className="octicon octicon-repo-forked v-align-text-bottom"
@@ -64,7 +65,7 @@ const RepoList = (props) => {
               <span>{rep.forks_count}</span>
             </div>
           </div>
-          <div className="w-1/4 text-center ">
+          <div className="item-box text-center ">
             <Link to={`/${props.userName}/${rep.name}`}>View readme</Link>
           </div>
         </div>
