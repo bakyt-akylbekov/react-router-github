@@ -11,7 +11,7 @@ const Readme = (props) => {
       </div>
     )
   }
-  return <Markdown className="markdown-body bg-indigo-100 border-2">{props.readme}</Markdown>
+  return <Markdown className="markdown-body bg-indigo-100 border-2 px-10 pt-3">{props.readme}</Markdown>
 }
 
 Readme.propTypes = {}

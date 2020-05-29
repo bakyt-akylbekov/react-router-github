@@ -5,7 +5,7 @@ import './repoList.scss'
 const RepoList = (props) => {
   const filteredRepo = props.repositories.filter((el) => el.name.includes(props.find))
   return (
-    <div>
+    <div className="pb-6">
       <div className="flex bg-indigo-200 border-b-2 border-indigo-500 text-center font-light py-2">
         <div className="item-box">Name</div>
         <div className="item-box">Star</div>
